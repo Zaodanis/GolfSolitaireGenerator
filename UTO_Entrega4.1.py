@@ -15,7 +15,7 @@ class SolitarioGolf:
             self.listaMesa.append([])
         
         for i in range(cantMontonesMesa):
-            for j in range(len(listaConCantCartasPorMonton)):
+            for j in range(listaConCantCartasPorMonton[i]): # para que arme el monton segun la lista
                 if (len(self.listaMesa[i]) < listaConCantCartasPorMonton[i]):
                     carta = random.choice(self.listaCartasDisponibles)
                     self.listaMesa[i].append(carta)
