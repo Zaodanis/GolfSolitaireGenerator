@@ -2,8 +2,10 @@
 # -*- coding: utf-8 -*-
 
 import random
+import sys
 from collections import Counter
 from collections import deque
+
 
 class SolitarioGolf:
     listaCartasDisponibles = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K',
@@ -120,7 +122,6 @@ class SolitarioGolf:
                 vistasAux.insert(0, mazoAux[0])
                 del(mazoAux[0])
                 configuracionesPorRevisar.append((vistasAux, listaMesaAux, mazoAux))
-        print "Solucion : " + str(list(reversed(cartasVistas)))
         return resuelto
 
 def esVacia(lista):
@@ -142,6 +143,9 @@ def obtenerSolitarioResolvible(cantMontonesMesa, listaConCantCartasPorMonton):
         resolvible = s.resolver(configuracionesPorRevisar)
     return mazo, glistaMesa
 
-solitario = obtenerSolitarioResolvible(4, [2, 5, 3,2])
-print solitario[0]
-print solitario[1]
+
+configuracion = sys.argv[1].split(',')
+solitario = obtenerSolitarioResolvible(len(configuracion), map(int, configuracion))
+
+print "Cartas en stack: " + str(solitario[0])
+print "Cartas en columnas: " + str(solitario[1])
