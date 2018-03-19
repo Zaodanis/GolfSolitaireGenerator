@@ -33,11 +33,11 @@ Test objetivo: Existe una secuencia que permite ganar en el solitario (la búsqu
 **Test objetivo**: la mesa está vacía y el mazo tiene al menos una carta.
 Estrategia de búsqueda: Búsqueda en amplitud
 
-### Ejecución de la implementación
+### Ejecución de la implementación:
 
 ```bash
 # Esto genera un solitario de 4 columnas,
-# con 3, 2, 4 y 5 cartas en cada columna respectivamente
+# con 3, 2, y 4 cartas en cada columna respectivamente
 $ python UTO_Entrega4.1.py 3,2,4
 
 #OUTPUT
