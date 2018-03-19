@@ -1,4 +1,4 @@
-##UT0 Entrega 4.1
+## UT0 Entrega 4.1
 
 Para la solución se optó por dividir el problema en dos búsquedas.
 La primera búsqueda consta de dada una configuración de un solitario: cantidad de columnas, y cantidad de cartas en cada columna, encontrar un posible estado inicial de juego.
