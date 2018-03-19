@@ -8,9 +8,12 @@ La segunda búsqueda consta de dado un solitiario,con su estado inicial, encontr
 ### Primera búsqueda, generar solitiario:
 
 **Representación**: una lista de C listas en la cual cada sublista está compuesta por números enteros positivos comprendidos entre 1 y 13. 
+
 **Estado inicial**: Permutación al azar de la estructura anterior
+
 **Función sucesor**: Permutación de la mesa de cartas
 Test objetivo: Existe una secuencia que permite ganar en el solitario (la búsqueda de dicha solución se hace mediante la segunda búsqueda, dicatada debajo)
+
 **Estrategia de búsqueda**: Búsqueda aleatoria
 
 **Consideraciones**
@@ -25,7 +28,9 @@ Test objetivo: Existe una secuencia que permite ganar en el solitario (la búsqu
 ### Segunda búsqueda, resolver solitiario:
 
 **Representación**: lista de enteros positivos comprendidos entre 1 y 13 en la cual cada elemento i de la misma cumple con: i – 1 < i < i + 1 en caso de que la posición de i no sea la primera de la lista.
+
 **Estado inicial**: lista vacía.
+
 **Función sucesor**:
 - Si existe una carta en la mesa que sea adyacente a la carta dada vuelta, agregarla a la lista.
 - En caso contrario, agregar a la lista una carta del mazo.
