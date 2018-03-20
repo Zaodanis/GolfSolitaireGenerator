@@ -59,6 +59,7 @@ class SolitarioGolf:
 
     def resolver(self, configuracionesPorRevisar):
         resuelto = False
+        cartasVistas = []
         while len(configuracionesPorRevisar) > 0 and not resuelto:
             configuracion = configuracionesPorRevisar.popleft()
             cartasVistas = configuracion[0]
@@ -114,14 +115,16 @@ class SolitarioGolf:
                     sublistaMesa = listaMesaAux[cartaMayor[i][1]]
                     del(sublistaMesa[0])
                     configuracionesPorRevisar.append((vistasAux, listaMesaAux, mazoAux))
-                vistasAux = list(cartasVistas)
-                listaMesaAux = []
-                for lista in listaMesa:
-                    listaMesaAux.append(list(lista))
-                mazoAux = list(mazo)
-                vistasAux.insert(0, mazoAux[0])
-                del(mazoAux[0])
-                configuracionesPorRevisar.append((vistasAux, listaMesaAux, mazoAux))
+                if len(mazo) > 0:
+                    vistasAux = list(cartasVistas)
+                    listaMesaAux = []
+                    for lista in listaMesa:
+                        listaMesaAux.append(list(lista))
+                    mazoAux = list(mazo)
+                    vistasAux.insert(0, mazoAux[0])
+                    del(mazoAux[0])
+                    configuracionesPorRevisar.append((vistasAux, listaMesaAux, mazoAux))
+        print ("Solucion:" + str(list(reversed(cartasVistas))))
         return resuelto
 
 def esVacia(lista):
@@ -145,7 +148,7 @@ def obtenerSolitarioResolvible(cantMontonesMesa, listaConCantCartasPorMonton):
 
 
 configuracion = sys.argv[1].split(',')
-solitario = obtenerSolitarioResolvible(len(configuracion), map(int, configuracion))
+solitario = obtenerSolitarioResolvible(len(configuracion), list(map(int, configuracion)))
 
-print "Cartas en stack: " + str(solitario[0])
-print "Cartas en columnas: " + str(solitario[1])
+print ("Cartas en stack: " + str(solitario[0]))
+print ("Cartas en columnas: " + str(solitario[1]))
