@@ -3,27 +3,27 @@
 Para la solución se optó por dividir el problema en dos búsquedas.
 La primera búsqueda consta de dada una configuración de un solitario: cantidad de columnas, y cantidad de cartas en cada columna, encontrar un posible estado inicial de juego.
 
-La segunda búsqueda consta de dado un solitiario,con su estado inicial, encontrar la secuencia de movimientos que lleven a su solución.
+La segunda búsqueda consta de dado un solitiario, con su estado inicial, encontrar la secuencia de movimientos que lleven a su solución.
 
 ### Primera búsqueda, generar solitiario:
 
 **Representación**: una lista de C listas en la cual cada sublista está compuesta por números enteros positivos comprendidos entre 1 y 13. 
 
-**Estado inicial**: Permutación al azar de la estructura anterior
+**Estado inicial**: Permutación al azar de la estructura anterior.
 
 **Función sucesor**: Permutación de la mesa de cartas
-Test objetivo: Existe una secuencia que permite ganar en el solitario (la búsqueda de dicha solución se hace mediante la segunda búsqueda, dicatada debajo)
+Test objetivo: Existe una secuencia que permite ganar en el solitario (la búsqueda de dicha solución se hace mediante la segunda búsqueda, dicatada debajo).
 
-**Estrategia de búsqueda**: Búsqueda aleatoria
+**Estrategia de búsqueda**: Búsqueda aleatoria.
 
 **Consideraciones**
 
-* C = cantidad de montones en la mesa
+* C = cantidad de montones en la mesa.
 * L = lista de enteros positivos en la cual cada posición de la misma hace referencia al montón de cartas comenzando de izquierda a derecha. Ejemplo:  L = {5, 8, 6}.
-* El primer montón de izquierda a derecha tiene 5 cartas
-* El segundo montón de izquierda a derecha tiene 8 cartas
-* El tercer montón de izquierda a derecha tiene 6 cartas
-* M = {1, 2, 3, 4, 5, …, 13}
+* El primer montón de izquierda a derecha tiene 5 cartas.
+* El segundo montón de izquierda a derecha tiene 8 cartas.
+* El tercer montón de izquierda a derecha tiene 6 cartas.
+* M = {1, 2, 3, 4, 5, …, 13}.
 
 ### Segunda búsqueda, resolver solitiario:
 
@@ -36,7 +36,8 @@ Test objetivo: Existe una secuencia que permite ganar en el solitario (la búsqu
 - En caso contrario, agregar a la lista una carta del mazo.
 
 **Test objetivo**: la mesa está vacía y el mazo tiene al menos una carta.
-Estrategia de búsqueda: Búsqueda en amplitud
+
+**Estrategia de búsqueda**: Búsqueda en amplitud.
 
 ### Ejecución de la implementación:
 
